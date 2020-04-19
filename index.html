@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+const data = [
+  {
+    principal : 2500,
+    time : 1.8
+  },
+  {
+    principal: 1000,
+    time: 5
+  },
+  {
+    principal : 3000,
+    time : 1
+  },
+  {
+    principal : 2000,
+    time: 3
+  }
+];
+
+function interestCalculator (arr){
+ let interestData = [];
+for(const datas of data){
+if(datas.principal >= 2500 & datas.time > 1 & datas.time < 3){
+  datas.rate = 3;
+  datas.interest = (datas.principal * datas.rate  * datas.time) / 100; 
+}
+ else if(datas.principal >= 2500 & datas.time <= 3){
+ datas.rate = 4;
+ datas.interest = (datas.principal * datas.rate  * datas.time) / 100; 
+ }
+else if(datas.principal < 2500 & datas.time > 3){
+  datas.rate = 2;
+  datas.interest = (datas.principal * datas.rate  * datas.time) / 100;
+} 
+else{
+ datas.rate = 1;
+ datas.interest = (datas.principal * datas.rate  * datas.time) / 100;
+}
+};
+interestData.push(data) ;
+console.log(interestData);
+return interestData;
+}
+
+interestCalculator(data);
+
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
+
+
+
+
